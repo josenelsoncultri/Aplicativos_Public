@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade | Organizador de Leitura</title>
+    <meta name="description"
+        content="Política de Privacidade do aplicativo Organizador de Leitura. Saiba como seus dados são mantidos 100% privados e armazenados localmente no seu dispositivo.">
+    <meta name="theme-color" content="#2e7d32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --primary-light: #e8f5e9;
+            --accent: #4caf50;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --bg-main: #0f172a;
+                --card-bg: #1e293b;
+                --border-color: #334155;
+                --primary-light: rgba(46, 125, 50, 0.2);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 0 4rem 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .app-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            font-weight: 400;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            opacity: 0.85;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: -2rem auto 0;
+            padding: 0 1.25rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2.2;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.925rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .content-body {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.3em;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        li::marker {
+            color: var(--primary);
+        }
+
+        .highlight-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.925rem;
+        }
+
+        th,
+        td {
+            padding: 0.875rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.02);
+            font-weight: 700;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-no {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #dcfce7;
+            color: #15803d;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .badge-no {
+                background-color: rgba(34, 197, 94, 0.2);
+                color: #4ade80;
+            }
+        }
+
+        .contact-card {
+            background: linear-gradient(to right, var(--primary-light), transparent);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .header {
+                padding: 3rem 1rem 2.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.85rem;
+            }
+
+            .content-body {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .summary-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="app-badge">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                </svg>
+                Privacidade Garantida • Google Play Compliant
+            </div>
+            <h1>Política de Privacidade</h1>
+            <p>Organizador de Leitura — O seu acompanhante de leitura simples, eficiente e 100% privado.</p>
+            <div class="header-meta">
+                <span><strong>Aplicativo:</strong> Organizador de Leitura</span>
+                <span><strong>Pacote:</strong> <code>br.com.josenelson.organizadordeleitura</code></span>
+                <span><strong>Última atualização:</strong> 16 de Agosto de 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Highlights Cards -->
+        <div class="summary-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Zero Coleta de Dados</h3>
+                <p>Não coletamos, armazenamos ou rastreamos nenhuma informação pessoal ou identificador do usuário.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Armazenamento Local</h3>
+                <p>Seus livros, estatísticas e registros de leitura ficam armazenados exclusivamente no seu dispositivo.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Sem Rastreadores ou Anúncios</h3>
+                <p>Livre de anúncios, cookies de rastreamento, Google Analytics ou bibliotecas de telemetria.</p>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <section id="introducao">
+                <h2>1. Visão Geral e Compromisso</h2>
+                <p>Esta Política de Privacidade descreve como o aplicativo <strong>Organizador de Leitura</strong>
+                    (identificado pelo pacote <code>br.com.josenelson.organizadordeleitura</code>) trata as informações
+                    do usuário.</p>
+                <p>Nosso compromisso fundamental é com a sua privacidade. Desenvolvemos este aplicativo sob o princípio
+                    da <strong>Privacidade por Design (Privacy by Design)</strong>. O aplicativo foi projetado para
+                    funcionar como uma ferramenta pessoal de organização de leitura sem necessitar ou coletar quaisquer
+                    dados pessoais do usuário.</p>
+            </section>
+
+            <section id="coleta-dados">
+                <h2>2. Coleta e Tratamento de Dados Pessoais</h2>
+                <p><strong>Nós NÃO coletamos nenhum tipo de dado pessoal ou privado.</strong></p>
+                <p>Para total transparência com nossos usuários e em conformidade com as diretrizes do Google Play,
+                    declaramos que o aplicativo <strong>NÃO</strong> solicita, coleta, processa, transmite ou
+                    compartilha:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Dado</th>
+                                <th>Status de Coleta</th>
+                                <th>Detalhes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <strong>
+                                    <td>Informações Pessoais (Nome, E-mail, Telefone, CPF)</td>
+                                </strong>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Não há cadastro, login ou criação de conta.</td>
+                            </tr>
+                            <tr>
+                                <strong>
+                                    <td>Localização (GPS ou Rede)</td>
+                                </strong>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>O app não acessa sua localização.</td>
+                            </tr>
+                            <tr>
+                                <strong>
+                                    <td>Identificadores de Dispositivo (AAID, IMEI, IP)</td>
+                                </strong>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Nenhum identificador é rastreado ou armazenado.</td>
+                            </tr>
+                            <tr>
+                                <strong>
+                                    <td>Arquivos Mídia, Fotos ou Contatos</td>
+                                </strong>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Não solicita acesso a contatos ou arquivos privados.</td>
+                            </tr>
+                            <tr>
+                                <strong>
+                                    <td>Dados Financeiros ou de Pagamento</td>
+                                </strong>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>O app é inteiramente gratuito e sem compras internas.</td>
+                            </tr>
+                            <tr>
+                                <strong>
+                                    <td>Dados de Uso e Telemetria (Analytics)</td>
+                                </strong>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Não utilizamos Google Analytics, Firebase ou similares.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="armazenamento-local">
+                <h2>3. Armazenamento de Dados no Dispositivo</h2>
+                <p>Todas as informações que você insere no aplicativo — tais como títulos de livros, autores, quantidade
+                    de páginas, histórico de sessões de leitura, datas e preferências do aplicativo — são armazenadas
+                    <strong>exclusivamente de forma local</strong> no seu próprio dispositivo móvel, utilizando as
+                    tecnologias de banco de dados SQLite local e armazenamento seguro do sistema (AsyncStorage).</p>
+
+                <div class="highlight-box">
+                    <p>🔒 <strong>Seus dados pertencem a você:</strong> Nenhuma informação cadastrada sobre seus livros
+                        ou leituras sai do seu dispositivo ou é enviada para servidores em nuvem mantidos por nós.</p>
+                </div>
+            </section>
+
+            <section id="servicos-externos">
+                <h2>4. Consultas Externas de Livros por ISBN</h2>
+                <p>O aplicativo oferece a funcionalidade conveniente de consultar informações públicas de livros
+                    digitando ou escaneando o número <strong>ISBN</strong> (Código Internacional Padronizado do Livro).
+                </p>
+                <p>Ao realizar uma busca por ISBN, o aplicativo faz uma requisição HTTP segura (HTTPS) para serviços
+                    públicos e gratuitos de catálogo de livros, incluindo:</p>
+                <ul>
+                    <li><strong>BrasilAPI</strong> (<code>brasilapi.com.br</code>)</li>
+                    <li><strong>Google Books API</strong> (<code>googleapis.com</code>)</li>
+                    <li><strong>Open Library API</strong> (<code>openlibrary.org</code>)</li>
+                </ul>
+                <p><strong>Importante:</strong> Esta consulta envia <em>apenas</em> o número do ISBN pesquisado para
+                    obter o título, autor e imagem de capa do livro. Nenhum dado pessoal, conta de usuário ou
+                    identificador de dispositivo é anexado ou transmitido nestas requisições.</p>
+            </section>
+
+            <section id="permissoes">
+                <h2>5. Permissões do Dispositivo</h2>
+                <p>O <strong>Organizador de Leitura</strong> não solicita permissões perigosas ou sensíveis no seu
+                    sistema operacional Android (como acesso a câmera, contatos, microfone, localização em segundo plano
+                    ou armazenamento externo global).</p>
+            </section>
+
+            <section id="criancas">
+                <h2>6. Privacidade de Crianças (COPPA e LGPD)</h2>
+                <p>Nosso aplicativo não é direcionado especificamente a crianças, mas é seguro para usuários de todas as
+                    idades. Como não coletamos absolutamente nenhum dado pessoal de ninguém, também não coletamos
+                    conscientemente dados de crianças menores de 13 anos (ou 18 anos), estando em integral conformidade
+                    com a Children's Online Privacy Protection Act (COPPA) e a Lei Geral de Proteção de Dados (LGPD -
+                    Lei nº 13.709/2018).</p>
+            </section>
+
+            <section id="exclusao-dados">
+                <h2>7. Exclusão e Controle de Dados pelo Usuário</h2>
+                <p>Como todos os seus dados ficam salvos localmente no seu aparelho:</p>
+                <ul>
+                    <li>Você pode alterar ou remover qualquer livro ou sessão de leitura a qualquer momento dentro do
+                        próprio aplicativo.</li>
+                    <li>Para apagar permanentemente <strong>todos</strong> os dados salvos pelo aplicativo, basta ir em
+                        <em>Configurações do Android &gt; Aplicativos &gt; Organizador de Leitura &gt; Armazenamento
+                            &gt; Limpar Dados</em>, ou simplesmente desinstalar o aplicativo.</li>
+                </ul>
+            </section>
+
+            <section id="alteracoes">
+                <h2>8. Alterações nesta Política de Privacidade</h2>
+                <p>Podemos atualizar nossa Política de Privacidade ocasionalmente para refletir, por exemplo, mudanças
+                    em nossas práticas operacionais ou por outros motivos operacionais, legais ou regulamentares.
+                    Qualquer alteração será refletida nesta página com a atualização da data de revisão.</p>
+            </section>
+
+            <section id="contato">
+                <h2>9. Contato e Dúvidas</h2>
+                <p>Se você tiver alguma dúvida, sugestão ou preocupação sobre esta Política de Privacidade ou sobre as
+                    práticas do aplicativo, entre em contato conosco:</p>
+
+                <div class="contact-card">
+                    <p style="margin-bottom: 0.5rem;"><strong>Desenvolvedor:</strong> Nelson Cultri</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>E-mail de Contato:</strong> <a
+                            href="mailto:josefcultrifrc@gmail.com">josefcultrifrc@gmail.com</a></p>
+                    <p style="margin-bottom: 0;"><strong>Aplicativo:</strong> Organizador de Leitura
+                        (<code>br.com.josenelson.organizadordeleitura</code>)</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Organizador de Leitura. Todos os direitos reservados.</p>
+        <p style="margin-top: 0.5rem;"><a href="#introducao">Voltar ao topo</a></p>
+    </footer>
+
+</body>
+
+</html>
