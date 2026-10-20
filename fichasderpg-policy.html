@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade | Fichas de RPG</title>
+    <meta name="description"
+        content="Política de Privacidade do aplicativo Fichas de RPG. Saiba como seus personagens, campanhas e backups são mantidos 100% seguros e armazenados no seu dispositivo.">
+    <meta name="theme-color" content="#D97706">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D97706;
+            --primary-dark: #92400E;
+            --primary-light: #FEF3C7;
+            --primary-glow: rgba(217, 119, 6, 0.20);
+            --secondary: #7C3AED;
+            --secondary-light: #EDE9FE;
+            --accent: #B45309;
+            --text-main: #1C1917;
+            --text-secondary: #57534E;
+            --text-muted: #78716C;
+            --bg-main: #F6F4EE;
+            --card-bg: #FFFFFF;
+            --border-color: #D6D0C4;
+            --border-subtle: #E6E1D6;
+            --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.08), 0 2px 4px -1px rgba(28, 25, 23, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.1), 0 4px 6px -2px rgba(28, 25, 23, 0.05);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #F59E0B;
+                --primary-dark: #D97706;
+                --primary-light: rgba(245, 158, 11, 0.18);
+                --secondary-light: rgba(124, 58, 237, 0.22);
+                --text-main: #F3F4F6;
+                --text-secondary: #CBD5E1;
+                --text-muted: #94A3B8;
+                --bg-main: #0B0F19;
+                --card-bg: #161F30;
+                --border-color: #2A3753;
+                --border-subtle: #1C273E;
+                --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+                --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.35);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 0 4rem 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .app-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.94;
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+            font-weight: 400;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            opacity: 0.90;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: -2rem auto 0;
+            padding: 0 1.25rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2.2;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .content-body {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.3em;
+            background-color: var(--primary);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 1.25rem 0 0.5rem;
+            color: var(--text-main);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        li::marker {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .highlight-box.secondary {
+            background-color: var(--secondary-light);
+            border-left-color: var(--secondary);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.925rem;
+        }
+
+        th,
+        td {
+            padding: 0.875rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.03);
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-no {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #dcfce7;
+            color: #15803d;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .badge-local {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #fef3c7;
+            color: #b45309;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            th {
+                background-color: rgba(255, 255, 255, 0.04);
+            }
+            .badge-no {
+                background-color: rgba(34, 197, 94, 0.2);
+                color: #4ade80;
+            }
+            .badge-local {
+                background-color: rgba(245, 158, 11, 0.25);
+                color: #fcd34d;
+            }
+        }
+
+        .contact-card {
+            background: linear-gradient(to right, var(--primary-light), transparent);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            code {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header {
+                padding: 3rem 1rem 2.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.85rem;
+            }
+
+            .content-body {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .summary-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="app-badge">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                </svg>
+                Privacidade Garantida • Google Play Compliant
+            </div>
+            <h1>Política de Privacidade</h1>
+            <p>Fichas de RPG — A sua mesa de aventuras organizada, rápida e com total respeito à sua privacidade.</p>
+            <div class="header-meta">
+                <span><strong>Aplicativo:</strong> Fichas de RPG</span>
+                <span><strong>Pacote:</strong> <code>br.com.josenelsoncultri.fichasderpg</code></span>
+                <span><strong>Versão:</strong> 1.0.0</span>
+                <span><strong>Última atualização:</strong> 19 de Outubro de 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Highlights Cards -->
+        <div class="summary-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Zero Coleta de Dados</h3>
+                <p>Não coletamos, não vendemos e não transmitimos dados pessoais ou identificadores de usuários.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Armazenamento 100% Local</h3>
+                <p>Seus personagens, fichas, atributos e anotações ficam salvos somente na memória interna do seu aparelho.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Backups sob seu Controle</h3>
+                <p>Cópias de segurança salvas em pasta externa escolhida por você, garantindo proteção contra perda de dados.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                </div>
+                <h3>Sem Rastreadores ou Anúncios</h3>
+                <p>Livre de propagandas, sem anúncios intrusivos e sem ferramentas ocultas de telemetria ou estatísticas.</p>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <section id="introducao">
+                <h2>1. Visão Geral e Compromisso com a sua Privacidade</h2>
+                <p>Esta Política de Privacidade descreve de maneira simples e transparente como o aplicativo <strong>Fichas de RPG</strong> (identificado pelo pacote <code>br.com.josenelsoncultri.fichasderpg</code>) cuida das suas informações.</p>
+                <p>O <strong>Fichas de RPG</strong> é um aplicativo utilitário desenvolvido para jogadores e mestres de RPG de mesa, permitindo criar, calcular regras e organizar fichas de personagens de maneira rápida e prática, com suporte às regras oficiais do D&amp;D 5ª Edição (SRD 2024 em português) e personalizações.</p>
+                <p>Nosso compromisso com você é absoluto: o aplicativo foi planejado e construído desde o primeiro dia sob o princípio de <strong>Privacidade por Design (Privacy by Design)</strong>. Nós acreditamos que as fichas das suas campanhas, ideias e anotações pertencem apenas a você. Por isso, o aplicativo opera <strong>100% offline</strong>, não requer nenhuma criação de conta, e não coleta nem transmite quaisquer dados para a internet.</p>
+            </section>
+
+            <section id="coleta-dados">
+                <h2>2. Coleta e Tratamento de Dados Pessoais</h2>
+                <p><strong>Nós NÃO coletamos, NÃO armazenamos em servidores remotos e NÃO compartilhamos nenhum dado pessoal.</strong></p>
+                <p>Para total clareza e conformidade com as exigências da Google Play Store (seção de <em>Segurança dos Dados</em>) e com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), detalhamos a seguir como cada tipo de informação é tratado:</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Dado</th>
+                                <th>Status de Coleta</th>
+                                <th>Como Funciona</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Informações Pessoais (Nome, E-mail, Telefone, CPF)</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>O aplicativo não possui formulário de cadastro, login, nem vínculo com redes sociais.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Localização (GPS ou Redes)</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>O aplicativo não solicita e não tem acesso a recursos de localização geográfica.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Identificadores de Aparelho (AAID, IMEI, Endereço IP)</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Nenhum identificador único do seu celular ou tablet é rastreado ou armazenado.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fotos, Câmera, Vídeos ou Galeria</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Não solicitamos acesso à sua câmera nem aos seus arquivos pessoais de fotos e mídia.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lista de Contatos e Agenda</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>O aplicativo não possui permissão nem necessidade de acessar seus contatos.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dados Financeiros ou Meios de Pagamento</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>O aplicativo não vende assinaturas, não possui compras internas e não coleta dados de cartões.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Métricas de Uso e Telemetria (Analytics)</strong></td>
+                                <td><span class="badge-no">Não Coletado</span></td>
+                                <td>Não utilizamos Google Analytics, Firebase, Crashlytics ou qualquer biblioteca analítica.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conteúdo das Fichas de RPG e Anotações</strong></td>
+                                <td><span class="badge-local">Armazenado Localmente</span></td>
+                                <td>Nomes de personagens, magias, itens e notas ficam estritamente no seu dispositivo.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="armazenamento-local">
+                <h2>3. Armazenamento de Dados no Dispositivo</h2>
+                <p>Todas as informações que você digita no aplicativo — incluindo fichas de personagens, histórico de evolução, magias conhecidas, ataques, inventário e anotações de campanha — são salvas <strong>exclusivamente na memória interna do seu próprio dispositivo</strong>, utilizando o banco de dados local do sistema operacional (SQLite).</p>
+
+                <div class="highlight-box">
+                    <p>🛡️ <strong>Privacidade e Soberania Total:</strong> Nenhum dado cadastrado nas suas fichas sai do seu dispositivo para servidores mantidos por nós ou por terceiros. As suas histórias, heróis e campanhas ficam guardados de forma segura sob o seu próprio controle.</p>
+                </div>
+            </section>
+
+            <section id="backups-pasta-externa">
+                <h2>4. Sistema de Backups e Acesso à Pasta Externa Autorizada</h2>
+                <p>Para garantir que você nunca perca suas fichas de RPG, o aplicativo conta com um sistema completo de <strong>cópias de segurança (backups)</strong>. É fundamental que você entenda com transparência como esse recurso funciona e como suas permissões são respeitadas:</p>
+
+                <h3>Por que o aplicativo precisa salvar backups fora da área restrita?</h3>
+                <p>Nos sistemas operacionais modernos (como versões recentes do Android), cada aplicativo possui uma pasta interna isolada (conhecida como <em>sandbox</em>). Quando o usuário desinstala um aplicativo por engano ou para liberar espaço temporário, o sistema operacional apaga automaticamente todos os arquivos contidos nessa pasta interna.</p>
+                <p>Sabemos que fichas de RPG representam meses ou até anos de aventuras e dedicação de jogadores e mestres. Por esse motivo, o <strong>Fichas de RPG</strong> permite que as cópias de segurança sejam salvas em uma <strong>pasta persistente no armazenamento do seu aparelho</strong> (por exemplo, dentro da pasta <code>Documentos/FichasDeRpg/Backups</code>), garantindo que suas fichas fiquem a salvo mesmo se o aplicativo for desinstalado ou reinstalado futuramente.</p>
+
+                <h3>Como funciona a autorização da pasta pelo usuário</h3>
+                <p>O acesso a essa pasta externa <strong>depende de autorização prévia e explícita do próprio usuário</strong>:</p>
+                <ul>
+                    <li>O aplicativo solicita permissão através do mecanismo oficial e seguro do sistema Android (chamado <em>Storage Access Framework</em> ou Seletor de Pastas do Sistema).</li>
+                    <li>Uma tela nativa do sistema é apresentada para que <strong>você escolha e confirme a pasta</strong> onde deseja que os backups sejam salvos.</li>
+                    <li>Sem a sua confirmação, o aplicativo não acessa nenhuma pasta externa.</li>
+                </ul>
+
+                <div class="highlight-box secondary">
+                    <p>📂 <strong>Escopo Restrito e Respeito aos seus Arquivos:</strong> O aplicativo utiliza essa permissão <strong>única e exclusivamente</strong> para criar, ler e atualizar os arquivos de cópia de segurança gerados pelo próprio app (arquivos com terminação <code>.json</code>). O aplicativo <strong>NÃO tem acesso, NÃO lê, NÃO visualiza e NÃO modifica</strong> nenhum outro arquivo pessoal existente no seu aparelho, como suas fotos, suas músicas, seus documentos pessoais ou arquivos de outros programas.</p>
+                </div>
+
+                <h3>Backup Automático Diário e Backups Manuais</h3>
+                <p>O aplicativo oferece duas modalidades de cópia de segurança:</p>
+                <ul>
+                    <li><strong>Backup Manual:</strong> A qualquer momento, na tela de gerenciamento de backups, você pode tocar no botão para gerar um backup imediato ou importar um arquivo de backup previamente salvo.</li>
+                    <li><strong>Backup Automático Diário:</strong> Quando habilitado, o aplicativo gera silenciosamente uma cópia de segurança a cada 24 horas ao ser aberto, preservando seu progresso mais recente. Você tem total liberdade para ligar ou desligar essa opção a qualquer momento no menu de Configurações.</li>
+                </ul>
+
+                <h3>Revogação de Acesso e Exclusão dos Backups</h3>
+                <p>Você tem o controle completo da pasta de backups:</p>
+                <ul>
+                    <li>Você pode apagar qualquer arquivo de backup diretamente dentro do gerenciador de backups do aplicativo.</li>
+                    <li>Você pode abrir qualquer gerenciador de arquivos do seu celular e visualizar, mover, renomear ou excluir a pasta e os arquivos de backup criados.</li>
+                    <li>Você pode revogar a permissão de acesso à pasta a qualquer instante nas configurações do seu sistema operacional Android.</li>
+                </ul>
+            </section>
+
+            <section id="exportacao-compartilhamento">
+                <h2>5. Exportação e Compartilhamento de Fichas</h2>
+                <p>O <strong>Fichas de RPG</strong> oferece recursos convenientes para você exportar suas fichas ou backups:</p>
+                <ul>
+                    <li>Ao utilizar a função de compartilhar, o aplicativo utiliza a janela de compartilhamento padrão do seu sistema operacional.</li>
+                    <li>Você decide para onde enviar o arquivo de backup (por exemplo, para o seu próprio Google Drive, para o seu e-mail pessoal, ou para o WhatsApp de um amigo de mesa).</li>
+                    <li>Nenhum compartilhamento acontece sem que você comande explicitamente essa ação na tela. O aplicativo não possui rotinas ocultas de envio.</li>
+                </ul>
+            </section>
+
+            <section id="permissoes">
+                <h2>6. Permissões Solicitadas no Dispositivo</h2>
+                <p>Para funcionar corretamente e com total integridade, o aplicativo solicita apenas permissões essenciais e não invasivas:</p>
+                <ul>
+                    <li><strong>Acesso à Pasta de Armazenamento Escolhida pelo Usuário:</strong> Solicitada através do seletor oficial do sistema para ler e gravar os arquivos de backup na pasta designada por você.</li>
+                    <li><strong>Vibração do Aparelho (<code>VIBRATE</code>):</strong> Utilizada unicamente para oferecer um retorno tátil leve e agradável quando você realiza certas ações no aplicativo (como confirmações e toques interativos).</li>
+                    <li><strong>Acesso à Rede (<code>INTERNET</code>):</strong> Permissão técnica padrão do ambiente de desenvolvimento. O aplicativo <strong>não se conecta a servidores externos</strong> para envio de dados pessoais, não transmite registros das suas fichas e opera perfeitamente mesmo quando seu aparelho está em Modo Avião ou totalmente desconectado da internet.</li>
+                </ul>
+                <p><strong>Permissões que NUNCA solicitamos:</strong> O aplicativo nunca solicita acesso à câmera, ao microfone, aos seus contatos, à sua localização em segundo plano ou ao armazenamento global irrestrito do seu telefone.</p>
+            </section>
+
+            <section id="criancas">
+                <h2>7. Privacidade de Crianças e Adolescentes</h2>
+                <p>O <strong>Fichas de RPG</strong> é um aplicativo seguro e apropriado para jogadores de todas as idades, incluindo famílias e jovens entusiastas de RPG de mesa.</p>
+                <p>Como o aplicativo não realiza cadastro, não solicita dados pessoais, não possui salas de bate-papo abertas e não transmite informações para a internet, nós <strong>não coletamos conscientemente dados pessoais de crianças ou adolescentes</strong>, estando em plena harmonia com a Lei Geral de Proteção de Dados (LGPD — Art. 14 da Lei nº 13.709/2018), com o Estatuto da Criança e do Adolescente (ECA) e com as normas internacionais como a <em>Children's Online Privacy Protection Act (COPPA)</em>.</p>
+            </section>
+
+            <section id="exclusao-dados">
+                <h2>8. Controle e Exclusão Definitiva dos Dados</h2>
+                <p>Você é o único proprietário de todas as informações inseridas no aplicativo e possui controle total sobre elas:</p>
+                <ul>
+                    <li><strong>Exclusão de Fichas Individuais:</strong> Você pode excluir qualquer personagem a qualquer momento diretamente pelo menu da ficha na tela principal.</li>
+                    <li><strong>Exclusão de Backups:</strong> Você pode excluir backups antigos no menu de gerenciamento de backups do aplicativo ou utilizando o gerenciador de arquivos do seu celular.</li>
+                    <li><strong>Limpeza Completa do Aplicativo:</strong> Se desejar apagar todos os dados do aplicativo de uma só vez, basta acessar as configurações do seu aparelho: <em>Configurações do Android &gt; Aplicativos &gt; Fichas de RPG &gt; Armazenamento &gt; Limpar Dados</em>, ou desinstalar o aplicativo.</li>
+                </ul>
+            </section>
+
+            <section id="google-play-conformidade">
+                <h2>9. Conformidade com as Políticas do Google Play</h2>
+                <p>Em conformidade com a seção de <strong>Segurança dos Dados (Data Safety)</strong> da Google Play Store, reiteramos de forma objetiva:</p>
+                <ul>
+                    <li><strong>Dados Coletados:</strong> Nenhum (Zero dados pessoais coletados).</li>
+                    <li><strong>Dados Compartilhados com Terceiros:</strong> Nenhum (Zero dados compartilhados).</li>
+                    <li><strong>Práticas de Segurança:</strong> Todos os dados ficam salvos de forma protegida no seu dispositivo, sob a segurança nativa do sistema operacional Android.</li>
+                    <li><strong>Mecanismo de Exclusão:</strong> O usuário pode apagar qualquer ou todas as suas informações diretamente no aplicativo a qualquer momento, sem necessidade de intermediários ou solicitações por e-mail.</li>
+                </ul>
+            </section>
+
+            <section id="alteracoes">
+                <h2>10. Alterações nesta Política de Privacidade</h2>
+                <p>Esta Política de Privacidade pode ser atualizada ocasionalmente para refletir melhorias no aplicativo, aprimoramentos de segurança ou ajustes regulamentares. Sempre que houver qualquer modificação, a data de "Última atualização" no início deste documento será revisada. Recomendamos que você consulte esta página periodicamente para se manter informado.</p>
+            </section>
+
+            <section id="contato">
+                <h2>11. Contato e Suporte</h2>
+                <p>Se você tiver qualquer dúvida, sugestão ou comentário sobre esta Política de Privacidade ou sobre as práticas do aplicativo, teremos o maior prazer em ajudar. Entre em contato conosco:</p>
+
+                <div class="contact-card">
+                    <p style="margin-bottom: 0.5rem;"><strong>Desenvolvedor:</strong> Nelson Cultri</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>E-mail de Contato:</strong> <a
+                            href="mailto:josefcultrifrc@gmail.com">josefcultrifrc@gmail.com</a></p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Aplicativo:</strong> Fichas de RPG</p>
+                    <p style="margin-bottom: 0;"><strong>Identificador do Pacote:</strong> <code>br.com.josenelsoncultri.fichasderpg</code></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fichas de RPG. Todos os direitos reservados.</p>
+        <p style="margin-top: 0.5rem;"><a href="#introducao">Voltar ao topo</a></p>
+    </footer>
+
+</body>
+
+</html>
+
